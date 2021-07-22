@@ -162,12 +162,6 @@ $(document).ready( function () {
             'selectAll',
             'selectNone'
         ],
-        language: {
-            buttons: {
-                selectAll: "Select all items",
-                selectNone: "Select none"
-            }
-        },
         initComplete: function(){
             //$('table.dataTable thead tr').addClass('sticky');
             $('div.dt-buttons').addClass('sticky');
