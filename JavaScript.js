@@ -158,8 +158,16 @@ $(document).ready( function () {
         buttons: [
             { extend: "create", editor: meatEditor },
             { extend: "edit",   editor: meatEditor },
-            { extend: "remove", editor: meatEditor }
+            { extend: "remove", editor: meatEditor },
+            'selectAll',
+            'selectNone'
         ],
+        language: {
+            buttons: {
+                selectAll: "Select all items",
+                selectNone: "Select none"
+            }
+        }
         initComplete: function(){
             //$('table.dataTable thead tr').addClass('sticky');
             $('div.dt-buttons').addClass('sticky');
