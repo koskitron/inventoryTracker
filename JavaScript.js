@@ -167,7 +167,7 @@ $(document).ready( function () {
                 selectAll: "Select all items",
                 selectNone: "Select none"
             }
-        }
+        },
         initComplete: function(){
             //$('table.dataTable thead tr').addClass('sticky');
             $('div.dt-buttons').addClass('sticky');
