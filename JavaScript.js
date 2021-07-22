@@ -1,3 +1,4 @@
+
 function formatMeat ( d ) {
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
@@ -16,10 +17,10 @@ function formatMeat ( d ) {
         '</tr>'+
     '</table>';
 }
-var editor;
+var meatEditor;
 $(document).ready( function () {
     // Object that will contain the local state. 
-    var todo = {
+    var meatArray = {
        1 : {meat: "Brisket", onHand: "1", par: "1", DT_RowId: "1"},
        2 : {meat: "Pork Butts", onHand: "1", par: "1", DT_RowId: "2"},
        3 : {meat: "Ribs", onHand: "1", par: "1", DT_RowId: "3"},
@@ -38,12 +39,12 @@ $(document).ready( function () {
 
     };
  
-    // Create or update the todo localStorage entry
-    if ( localStorage.getItem('todo') ) {
-        todo = JSON.parse( localStorage.getItem('todo') );
+    // Create or update the meatArray localStorage entry
+    if ( localStorage.getItem('meatArray') ) {
+        meatArray = JSON.parse( localStorage.getItem('meatArray') );
     }
 
-    editor = new $.fn.dataTable.Editor( {
+    meatEditor = new $.fn.dataTable.Editor( {
         //sAjaxDataProp: "feed.entry",
         //sAjaxSource: "https://spreadsheets.google.com/feeds/list/1piU6KZ89CJYfrpPj8kl-R-wIQivUGxdLyL1ZtEkT7eM/1/public/values?alt=json",
         table: "#meats",
@@ -60,6 +61,11 @@ $(document).ready( function () {
                 label: "Par:",
                 name: "par"
             }, 
+            {
+                label: "Order",
+                name: "order",
+                type: "hidden"
+            }
         ],
         ajax: function ( method, url, d, successCallback, errorCallback ) {
             var output = { data: [] };
@@ -73,7 +79,7 @@ $(document).ready( function () {
                     var id = dateKey+''+key;
  
                     value.DT_RowId = id;
-                    todo[ id ] = value;
+                    meatArray[ id ] = value;
                     output.data.push( value );
                 } );
             }
@@ -81,19 +87,19 @@ $(document).ready( function () {
                 // Update each edited item with the data submitted
                 $.each( d.data, function (id, value) {
                     value.DT_RowId = id;
-                    $.extend( todo[ id ], value );
-                    output.data.push( todo[ id ] );
+                    $.extend( meatArray[ id ], value );
+                    output.data.push( meatArray[ id ] );
                 } );
             }
             else if ( d.action === 'remove' ) {
                 // Remove items from the object
                 $.each( d.data, function (id) {
-                    delete todo[ id ];
+                    delete meatArray[ id ];
                 } );
             }
  
-            // Store the latest `todo` object for next reload
-            localStorage.setItem( 'todo', JSON.stringify(todo) );
+            // Store the latest `meatArray` object for next reload
+            localStorage.setItem( 'meatArray', JSON.stringify(meatArray) );
  
             // Show Editor what has changed
             successCallback( output );
@@ -101,8 +107,8 @@ $(document).ready( function () {
     } );
 
 
-    $('#meats').on( 'click', 'tbody td:not(:first-child)', function (e) {
-        editor.inline( this, {
+    $('#meats').on( 'click', 'tbody td:not(:first-child, :last-child) ', function (e) {
+        meatEditor.inline( this, {
             onBlur: 'submit'
         } );
     } );
@@ -117,17 +123,17 @@ $(document).ready( function () {
         //iDisplayLength: "All",
         paging: false,
         select: true,
-        data: $.map( todo, function (value, key) {
+        data: $.map( meatArray, function (value, key) {
             return value;
         } ),
         columns: [
-            {
+            /*{
                 data: null,
                 defaultContent: "",
                 className: "details-control-symbol",
                 width: "5px",
 
-            },
+            },*/
             {
                 data: "meat",
                 title: "Meat",
@@ -150,9 +156,9 @@ $(document).ready( function () {
         ],
         //select: true,
         buttons: [
-            { extend: "create", editor: editor },
-            { extend: "edit",   editor: editor },
-            { extend: "remove", editor: editor }
+            { extend: "create", editor: meatEditor },
+            { extend: "edit",   editor: meatEditor },
+            { extend: "remove", editor: meatEditor }
         ],
         initComplete: function(){
             //$('table.dataTable thead tr').addClass('sticky');
@@ -177,7 +183,7 @@ $(document).ready( function () {
             row.child( formatMeat(d) ).show();
             tr.addClass('shown');
         }
-    });
+    }); 
 
 
 } );
