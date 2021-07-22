@@ -159,8 +159,6 @@ $(document).ready( function () {
             { extend: "create", editor: meatEditor },
             { extend: "edit",   editor: meatEditor },
             { extend: "remove", editor: meatEditor },
-            'selectAll',
-            'selectNone'
         ],
         initComplete: function(){
             //$('table.dataTable thead tr').addClass('sticky');
