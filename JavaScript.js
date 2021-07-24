@@ -113,10 +113,15 @@ $(document).ready( function () {
         } );
     } );
 
-    $(document).on('click', 'td' ,function (e){
-        $('#DTE_Field_onHand').attr('inputmode','decimal');
-        alert("Clicked!")
+    $(document).on('click','td:nth-child(2)', function(e){
+        $('#DTE_Field_onHand').attr('inputmode','numeric');
     });
+    
+    /*$(document).on('click', 'td' ,function (e){
+        //$('#DTE_Field_onHand').attr('inputmode','decimal');
+        $(".odd .even td:nth-child(2)")
+        alert("Clicked!");
+    });*/
 
 
 
