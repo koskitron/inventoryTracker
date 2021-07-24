@@ -113,6 +113,12 @@ $(document).ready( function () {
         } );
     } );
 
+    $('#DTE_Field_onHand').onClick(function (e){
+        $('#DTE_Field_onHand').attr('inputmode','decimal');
+    });
+
+
+
     var meatTable = $('#meats').DataTable({
         //"dom": '<"top"<"pml"><"pmr"B>>rt <"bottom"lip>',
         //dom: "B",
@@ -158,9 +164,7 @@ $(document).ready( function () {
         buttons: [
             { extend: "create", editor: meatEditor },
             { extend: "edit",   editor: meatEditor },
-            { extend: "remove", editor: meatEditor },
-            "selectAll",
-            "selectNone"
+            { extend: "remove", editor: meatEditor }
         ],
         initComplete: function(){
             //$('table.dataTable thead tr').addClass('sticky');
