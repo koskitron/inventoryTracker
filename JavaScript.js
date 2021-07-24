@@ -5,7 +5,7 @@ var editor;
 $(document).ready( function () {
 
     $('.querySelector').change(function(){
-        queryValue = $('.querySelector').find(":selected").val();
+        queryValue = $('.querySelector').val();
         console.log(queryValue);
         inventoryTable.search(queryValue).draw();
             
@@ -222,7 +222,7 @@ $(document).ready( function () {
  
     // Create or update the inventoryArray localStorage entry
     if ( localStorage.getItem('inventoryArray') ) {
-        inventoryArray = JSON.parse( localStorage.getItem('v') );
+        inventoryArray = JSON.parse( localStorage.getItem('inventoryArray') );
     }
 
     editor = new $.fn.dataTable.Editor( {
@@ -350,6 +350,8 @@ $(document).ready( function () {
             $('.dataTables_filter').wrap('<div class="col"></div>').addClass('my-2');
             $('.btn.float-none').wrap('<div class="col"></div>').addClass('my-2');
             $('input.form-control.form-control-sm').attr('placeholder','Search...');
+            //$('#inventoryTable tbody tr td:nth-child(4)').addClass('order');
+            //$('td.order:gt(0)').addClass('orderMe');
             //$('#inventoryTable_filter label').text("").html('<input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="inventoryTable">');
             //$('input.form-control.form-control-sm').unwrap();
             //$( "label" ).remove( ":contains('Search:')" );
