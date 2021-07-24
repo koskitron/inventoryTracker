@@ -76,34 +76,34 @@ $(document).ready( function () {
        50 : {item: "Breakfast Crumble Sausage ", onHand: "1", par: "1", category: "Frozen", DT_RowId: "50"},
        51 : {item: "Polish Sausage ", onHand: "1", par: "1", category: "Frozen", DT_RowId: "51"},
        52 : {item: "Rope Kielbasa", onHand: "1", par: "1", category: "Frozen", DT_RowId: "52"},
-       53 : {item: "Arcedian Blend Lettuce", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "53"},
-       54 : {item: "Burger Set Lettuce", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "54"},
-       55 : {item: "Carrots", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "55"},
-       56 : {item: "Roma Tomato", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "56"},
-       57 : {item: "Jalapenos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "57"},
-       58 : {item: "Red Pepper", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "58"},
-       59 : {item: "Green Pepper", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "59"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
-       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refridgerator", DT_RowId: "28"},
+       53 : {item: "Arcedian Blend Lettuce", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "53"},
+       54 : {item: "Burger Set Lettuce", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "54"},
+       55 : {item: "Carrots", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "55"},
+       56 : {item: "Roma Tomato", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "56"},
+       57 : {item: "Jalapenos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "57"},
+       58 : {item: "Red Pepper", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "58"},
+       59 : {item: "Green Pepper", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "59"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
+       28 : {item: "Corn Tortillas Tacos", onHand: "1", par: "1", category: "Refrigerator", DT_RowId: "28"},
 
 
 
@@ -237,8 +237,14 @@ $(document).ready( function () {
             //$('div.col.min-vh-100').removeClass('p-4')
             $('div.dt-buttons, .dataTables_filter, .float-none').wrapAll('<div class="container-fluid sticky-top p-0 white-background"></div>');
             $('.btn.float-none, .dataTables_filter').wrapAll('<div class="row"></div>');
-            $('.dataTables_filter').wrap('<div class="col"></div>');
-            $('.btn.float-none').wrap('<div class="col"></div>');
+            $('.dataTables_filter').wrap('<div class="col"></div>').addClass('my-2');
+            $('.btn.float-none').wrap('<div class="col"></div>').addClass('my-2');
+            $('input.form-control.form-control-sm').attr('placeholder','Search...');
+            $('#inventoryTable_filter label').html($("#inventoryTable_filter label").html().replace("Search:",""));
+            //$('input.form-control.form-control-sm').unwrap();
+            //$( "label" ).remove( ":contains('Search:')" );
+            //$("#inventoryTable_filter label").hide();
+                
         },
     });
 } );
