@@ -11,19 +11,19 @@ $(document).ready( function () {
             
     });
 
-    $('#test').keyup(function(){
-        inventoryTable.search($(this).val()).draw() ;
-        //console.log("test");
-    });
-
     $('#inventoryTable').on( 'click', 'tbody td:not(:first-child, :last-child) ', function (e) {
         editor.inline( this, {
             onBlur: 'submit'
         } );
+
     } );
 
     $(document).on('click','td:nth-child(2)', function(e){
         $('#DTE_Field_onHand').attr('inputmode','decimal');
+    });
+
+    $(document).on('click','td:nth-child(3)', function(e){
+        $('#DTE_Field_par').attr('inputmode','decimal');
     });
 
     // Object that will contain the local state. 
