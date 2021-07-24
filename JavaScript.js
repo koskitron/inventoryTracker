@@ -7,9 +7,13 @@ $(document).ready( function () {
     $('.querySelector').change(function(){
         queryValue = $('.querySelector').find(":selected").val();
         console.log(queryValue);
-        inventoryTable.search(queryValue);
-        inventoryTable.draw();
+        inventoryTable.search(queryValue).draw();
             
+    });
+
+    $('#test').keyup(function(){
+        inventoryTable.search($(this).val()).draw() ;
+        //console.log("test");
     });
 
     $('#inventoryTable').on( 'click', 'tbody td:not(:first-child, :last-child) ', function (e) {
@@ -226,6 +230,7 @@ $(document).ready( function () {
                 searchable: true
             }
         ],
+        language: { search: "" },
         //select: true,
         buttons: [
             { extend: "create", editor: editor },
@@ -240,7 +245,7 @@ $(document).ready( function () {
             $('.dataTables_filter').wrap('<div class="col"></div>').addClass('my-2');
             $('.btn.float-none').wrap('<div class="col"></div>').addClass('my-2');
             $('input.form-control.form-control-sm').attr('placeholder','Search...');
-            $('#inventoryTable_filter label').html($("#inventoryTable_filter label").html().replace("Search:",""));
+            //$('#inventoryTable_filter label').text("").html('<input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="inventoryTable">');
             //$('input.form-control.form-control-sm').unwrap();
             //$( "label" ).remove( ":contains('Search:')" );
             //$("#inventoryTable_filter label").hide();
