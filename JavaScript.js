@@ -5,7 +5,7 @@ var editor;
 $(document).ready( function () {
 
     $('.querySelector').change(function(){
-        queryValue = $('.querySelector').find(":selected").text();
+        queryValue = $('.querySelector').find(":selected").val();
         console.log(queryValue);
         inventoryTable.search(queryValue);
         inventoryTable.draw();
@@ -235,7 +235,7 @@ $(document).ready( function () {
         initComplete: function(){
             //$('table.dataTable thead tr').addClass('sticky');
             //$('div.col.min-vh-100').removeClass('p-4')
-            $('div.dt-buttons, .dataTables_filter, .float-none').wrapAll('<div class="container-fluid sticky-top p-0 white-background"></div>');
+            $('div.dt-buttons, .dataTables_filter, .float-none').wrapAll('<div class="container-fluid sticky-top p-0" style="background-color: White"></div>');
             $('.btn.float-none, .dataTables_filter').wrapAll('<div class="row"></div>');
             $('.dataTables_filter').wrap('<div class="col"></div>').addClass('my-2');
             $('.btn.float-none').wrap('<div class="col"></div>').addClass('my-2');
