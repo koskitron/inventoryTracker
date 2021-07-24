@@ -113,8 +113,9 @@ $(document).ready( function () {
         } );
     } );
 
-    $('#DTE_Field_onHand').onClick(function (e){
+    $(document).on('click', 'td' ,function (e){
         $('#DTE_Field_onHand').attr('inputmode','decimal');
+        alert("Clicked!")
     });
 
 
