@@ -17,10 +17,10 @@ tr.shown td.details-control-symbol::before{
     content: "\f068"
 }
 
-.sticky{
+.sticky-dataTable-header{
     position: sticky;
-    top:5px;
-    background-color: white;
+    top: 100px;
+    background-color: white !important;
     z-index: 1;
   }
 

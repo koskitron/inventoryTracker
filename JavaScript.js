@@ -409,7 +409,7 @@ $(document).ready( function () {
             $('.btn.float-none, .dataTables_filter').wrapAll('<div class="row"></div>');
             $('.dataTables_filter').wrap('<div class="col"></div>').addClass('my-2');
             $('.btn.float-none').wrap('<div class="col"></div>').addClass('my-2');
-            $('input.form-control.form-control-sm').attr('placeholder','Search...');
+            $('input.form-control.form-control-sm').attr('placeholder','Search...').addClass('col-10');
             $("button.buttons-select-all").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
             $("button.buttons-select-none").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
             $("button.buttons-pdf").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
