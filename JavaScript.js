@@ -1,5 +1,7 @@
 
 var editor;
+
+var reportArr = [];
 //var queryValue = $('.querySelector').find(":selected").text(); 
 
 $(document).ready( function () {
@@ -9,6 +11,40 @@ $(document).ready( function () {
         console.log(queryValue);
         inventoryTable.search(queryValue).draw();
             
+    });
+
+    $('#reportButton').click(function(e){
+        //pdfMake.createPdf(docDefinition).download();
+        //$('#inventoryTable tbody tr td:nth-child(4)').addClass('order');
+        $('#inventoryTable tr').each(function(){
+            var currentRow=$(this)
+            
+            var itemValue = currentRow.find('td:eq(0)').text();
+            var orderValue = currentRow.find('td:eq(3)').text();
+
+            var obj = {};
+            obj.Item = itemValue;
+            obj.Quantity = orderValue;
+
+            if (obj.Quantity > 0){
+                reportArr.push(obj);
+            }
+        });
+
+       var dd = {
+           content: [
+               {
+                   table:{
+                       body:[
+                           reportArr
+                       ]
+                   }
+               }
+           ]
+       }
+
+        console.log(reportArr);
+        //pdfMake.createPdf(dd).open();
     });
 
     $('#inventoryTable').on( 'click', 'tbody td:not(:first-child, :last-child) ', function (e) {
@@ -350,8 +386,7 @@ $(document).ready( function () {
             $('.dataTables_filter').wrap('<div class="col"></div>').addClass('my-2');
             $('.btn.float-none').wrap('<div class="col"></div>').addClass('my-2');
             $('input.form-control.form-control-sm').attr('placeholder','Search...');
-            //$('#inventoryTable tbody tr td:nth-child(4)').addClass('order');
-            //$('td.order:gt(0)').addClass('orderMe');
+            
             //$('#inventoryTable_filter label').text("").html('<input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="inventoryTable">');
             //$('input.form-control.form-control-sm').unwrap();
             //$( "label" ).remove( ":contains('Search:')" );
