@@ -8,6 +8,7 @@ $(document).ready( function () {
 
     $('.querySelector').change(function(){
         queryValue = $('.querySelector').val();
+        inventoryTable.rows('.selected').deselect();
         console.log(queryValue);
         inventoryTable.search(queryValue).draw();
             
@@ -31,17 +32,6 @@ $(document).ready( function () {
             }
         });
 
-       var dd = {
-           content: [
-               {
-                   table:{
-                       body:[
-                           reportArr
-                       ]
-                   }
-               }
-           ]
-       }
 
         console.log(reportArr);
         //pdfMake.createPdf(dd).open();
@@ -336,6 +326,7 @@ $(document).ready( function () {
         dom: "fBtp",
         paging: false,
         select: true,
+        order: [[ 4, 'asc' ], [ 0, 'asc' ]],
         data: $.map( inventoryArray, function (value, key) {
             return value;
         } ),
@@ -374,6 +365,39 @@ $(document).ready( function () {
         language: { search: "" },
         //select: true,
         buttons: [
+            "selectAll",
+            "selectNone",
+            {
+                extend: "pdfHtml5",
+                download: "open",
+                text: "Generate Report",
+                title: "Inventory Report",
+                filename: "Big Al's Order Form",
+                exportOptions: {
+                  rows: function(idx, data, node) {
+                    if ( Math.max(0,Math.round(data.par - data.onHand)) > 0) {
+                        console.log(data);
+                      return true;
+                    }
+                    console.log(data);
+                  }
+                },
+              
+            /*{ 
+                extend:'pdfHtml5', 
+                text: "Generate Report",
+                title: "Inventory Report",
+                download: "open",
+                filename: "Big Al's Order Form",
+                exportOptions: {
+                
+                },
+            },*/
+                customize: function (doc){
+                    doc.content[1].margin = [100,0,100,0]//left, top, right, bottom
+                    console.log(doc);
+                }
+            },
             { extend: "create", editor: editor },
             { extend: "edit",   editor: editor },
             { extend: "remove", editor: editor }
@@ -386,7 +410,10 @@ $(document).ready( function () {
             $('.dataTables_filter').wrap('<div class="col"></div>').addClass('my-2');
             $('.btn.float-none').wrap('<div class="col"></div>').addClass('my-2');
             $('input.form-control.form-control-sm').attr('placeholder','Search...');
-            
+            $("button.buttons-select-all").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
+            $("button.buttons-select-none").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
+            $("button.buttons-pdf").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
+
             //$('#inventoryTable_filter label').text("").html('<input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="inventoryTable">');
             //$('input.form-control.form-control-sm').unwrap();
             //$( "label" ).remove( ":contains('Search:')" );

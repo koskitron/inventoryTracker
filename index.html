@@ -24,6 +24,7 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css">
         <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
 
+
         <script src="https://cdn.datatables.net/datetime/1.1.0/js/dataTables.dateTime.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="resources/editor/css/editor.bootstrap5.min.css">
@@ -34,7 +35,8 @@
         <link rel="stylesheet" type="text/css" href="/CSS.css">
         <script src="https://kit.fontawesome.com/e5ae554142.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
         
         <script type="text/javascript" src="JavaScript.js"></script>
 
@@ -64,15 +66,14 @@
                             <option value="Misc">Misc</option>
                         </select>
                     </li>
-                    <li>
-                        <button id="reportButton" class="btn btn-primary ms-2 my-2">Generate Report</button>
+                    <li id="newButtonAssignment">
                     </li>
                 </ul>
             </div>
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col min-vh-100 p-3">
+                <div class="col min-vh-100 d-grid">
                     <!-- toggler -->
                     <button class="btn float-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
                         <i class="fas fa-bars fs-3" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"></i>
