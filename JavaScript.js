@@ -53,7 +53,7 @@ $(document).ready( function () {
     });
 
     // Object that will contain the local state. 
-    var inventoryArray = {
+    var defaultsArray = {
        1 : {item: "Brisket", onHand: "1", par: "1", category: "meat",DT_RowId: "1"},
        2 : {item: "Pork Butts", onHand: "1", par: "1", category: "meat", DT_RowId: "2"},
        3 : {item: "Ribs", onHand: "1", par: "1", category: "meat", DT_RowId: "3"},
@@ -241,10 +241,9 @@ $(document).ready( function () {
        186 : {item: "Sugar Packets", onHand: "1", par: "1", category: "Misc", DT_RowId: "186"},
        187 : {item: "Sweet N' Low", onHand: "1", par: "1", category: "Misc", DT_RowId: "187"},
        188 : {item: "Charcol Lighter", onHand: "1", par: "1", category: "Misc", DT_RowId: "188"},
-
-
-
     };
+
+    var inventoryArray = defaultsArray;
  
     // Create or update the inventoryArray localStorage entry
     if ( localStorage.getItem('inventoryArray') ) {
@@ -368,6 +367,18 @@ $(document).ready( function () {
             "selectAll",
             "selectNone",
             {
+                text: "Restore Defaults",
+                className: "col-10 btn my-2 ms-2 btn-primary restore-default",
+                action: function (e){
+                    var result = confirm("Would you like to restore all default values for you management? This action cannot be undone.");
+                    if (result){
+                        console.log('result passed');
+                        localStorage.removeItem('inventoryArray');
+                        location.reload();
+                    }
+                }
+            },
+            {
                 extend: "pdfHtml5",
                 download: "open",
                 text: "Generate Report",
@@ -382,17 +393,6 @@ $(document).ready( function () {
                     console.log(data);
                   }
                 },
-              
-            /*{ 
-                extend:'pdfHtml5', 
-                text: "Generate Report",
-                title: "Inventory Report",
-                download: "open",
-                filename: "Big Al's Order Form",
-                exportOptions: {
-                
-                },
-            },*/
                 customize: function (doc){
                     doc.content[1].margin = [100,0,100,0]//left, top, right, bottom
                     console.log(doc);
@@ -400,7 +400,7 @@ $(document).ready( function () {
             },
             { extend: "create", editor: editor },
             { extend: "edit",   editor: editor },
-            { extend: "remove", editor: editor }
+            { extend: "remove", editor: editor },
         ],
         initComplete: function(){
             //$('table.dataTable thead tr').addClass('sticky');
@@ -410,10 +410,11 @@ $(document).ready( function () {
             $('.dataTables_filter').wrap('<div class="col"></div>').addClass('my-2');
             $('.btn.float-none').wrap('<div class="col"></div>').addClass('my-2');
             $('input.form-control.form-control-sm').attr('placeholder','Search...').addClass('col-10');
-            $("button.buttons-select-all").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
-            $("button.buttons-select-none").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
-            $("button.buttons-pdf").detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
-
+            $('button.buttons-select-all').detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
+            $('button.buttons-select-none').detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
+            $('button.buttons-pdf').detach().appendTo('#newButtonAssignment').addClass('my-2 ms-2 btn-primary col-10').removeClass('btn-secondary');
+            $('button.restore-default').detach().appendTo('#newButtonAssignment').removeClass('btn-secondary');
+            $('#inventoryTable thead').addClass('sticky-dataTable-header');
             //$('#inventoryTable_filter label').text("").html('<input type="search" class="form-control form-control-sm" placeholder="Search..." aria-controls="inventoryTable">');
             //$('input.form-control.form-control-sm').unwrap();
             //$( "label" ).remove( ":contains('Search:')" );
